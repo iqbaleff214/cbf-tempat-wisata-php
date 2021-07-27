@@ -61,7 +61,7 @@ function hasFlash() {
     return isset($_SESSION['flash']);
 }
 
-function getFlash(): String {
+function getFlash() {
     $message = $_SESSION['flash'];
     unset($_SESSION['flash']);
     return $message;
