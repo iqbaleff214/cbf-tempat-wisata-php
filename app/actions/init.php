@@ -8,22 +8,53 @@ if (isset($pages[$_GET['page']]) && in_array($_GET['action'], $actions)) {
 
     if ($_GET['action'] == 'recommendation') {
 
+        $history = $_POST;
+
         $similiarities = [];
         $user = [];
-        foreach ($_POST as $key => $value) 
+        $pariwisata = [];
+        foreach ($history as $key => $value) 
             $user[] = floatval($value);
 
-        foreach ($wisata as $key => $value) {
+        setOld($history);
+
+        $tb = (new Table('pariwisata'))->getAll();
+
+        foreach ($tb as $value) {
+            $pariwisata[$value['id_wisata']] = [
+                floatval($value['prokes']),
+                floatval($value['biaya']),
+                floatval($value['rating']),
+                floatval($value['parkir_mobil']),
+                floatval($value['parkir_motor']),
+                floatval($value['warung_makan']),
+                floatval($value['toilet']),
+                floatval($value['tempat_inap']),
+                floatval($value['sewa_alat']),
+            ];
+        }
+
+        foreach ($pariwisata as $key => $value) {
             $d = 0;
 
-            for ($i=0; $i < count($value); $i++) 
+            for ($i=0; $i < 9; $i++) 
                 $d += pow(($user[$i] - $value[$i]), 2);
 
-            $s = 1 / ( 1+ $d);
+            $s = 1 / ( 1 + $d);
             
             $similiarities[$key] = $s;
         }
+
         arsort($similiarities);
+
+        $fav = array_keys($similiarities);
+
+        $history['wisata1'] = $fav[0];
+        $history['wisata2'] = $fav[1];
+        $history['wisata3'] = $fav[2];
+
+        (new Table('riwayat'))->insert($history);
+
         $message = $similiarities;
         
     } else {

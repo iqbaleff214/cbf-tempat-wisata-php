@@ -24,6 +24,11 @@ class Table extends Database {
         return parent::getWhereDB($this->table, $where);
     }
 
+    public function getGroup($column)
+    {
+        return parent::getGroupDB($this->table, $column);
+    }
+
     public function getLike($where)
     {
         return parent::getLikeDB($this->table, $where);

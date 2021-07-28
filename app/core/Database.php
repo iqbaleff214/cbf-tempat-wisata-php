@@ -40,6 +40,15 @@ class Database {
         return $ret;
     }
 
+    public function getGroupDB($table, $group)
+    {
+        $sql = "SELECT {$group}, COUNT({$group}) as count, SUM({$group}) as sum FROM {$table} GROUP BY {$group} ORDER BY count DESC";
+        $res = $this->conn->query($sql);
+        $ret = [];
+        while ($row = $res->fetch_assoc()) $ret[] = $row;
+        return $ret;
+    }
+
     public function getLikeDB($table, $like = [])
     {
         $sql = "SELECT * FROM {$table} ";

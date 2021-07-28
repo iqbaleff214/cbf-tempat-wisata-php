@@ -53,6 +53,11 @@ function currentUrl(): String {
     return $url; 
 }
 
+function selected($item, $compare)
+{
+    return $item == $compare ? 'selected' : '';
+}
+
 function setFlash($message) {
     $_SESSION['flash'] = $message;
 }
@@ -65,4 +70,30 @@ function getFlash() {
     $message = $_SESSION['flash'];
     unset($_SESSION['flash']);
     return $message;
+}
+
+function setOld($message) {
+    $_SESSION['old'] = $message;
+}
+
+function hasOld() {
+    return isset($_SESSION['old']);
+}
+
+function getOld($input = null) {
+    if (hasOld()) {
+        if ($input) {
+            $message = $_SESSION['old'][$input];
+        } else {
+            $message = $_SESSION['old'];
+        }
+        return $message;
+    } else {
+        return 0;
+    }
+}
+
+function removeOld()
+{
+    unset($_SESSION['old']);
 }

@@ -6,49 +6,49 @@ define('APPNAME', 'REKOMENDASI WISATA');
 define('HOSTNAME', 'localhost');
 define('USERNAME', 'admin');
 define('PASSWORD', 'admin');
-define('DATABASE', 'kuliah_web');
+define('DATABASE', 'ta_andin');
 
 // Mengatur mode halaman
 define('DARKMODE', true);
 
 // Daftar halaman yang tersedia
 $pages = [
-    'home' => 'home.php',
-    'rekomendasi' => 'rekomendasi.php',
-    # Jurusan
-    'jurusan' => 'jurusan/index.php',
-    'jurusan_detail' => 'jurusan/show.php',
-    'jurusan_tambah' => 'jurusan/create.php',
-    'jurusan_edit' => 'jurusan/edit.php',
+    # Halaman Utama
+    'home'              => 'home.php',
+    'rekomendasi'       => 'rekomendasi.php',
+    'semua'             => 'semua.php',
+    'detail'            => 'detail.php',
+
+    # Kategori
+    'wisata-alam'       => 'kategori.php',
+    'wisata-kuliner'    => 'kategori.php',
+    'wisata-edukasi'    => 'kategori.php',
+    'wisata-religi'     => 'kategori.php',
+    'wisata-rekreasi'   => 'kategori.php',
 ];
 
 $categories = [
-    'wisata-alam' => 'wisata/alam.php',
-    'wisata-kuliner' => 'wisata/kuliner.php',
-    'wisata-edukasi' => 'wisata/edukasi.php',
-    'wisata-religi' => 'wisata/religi.php',
-    'wisata-rekreasi' => 'wisata/rekreasi.php',
+    'wisata-alam'       => 'kategori.php',
+    'wisata-kuliner'    => 'kategori.php',
+    'wisata-edukasi'    => 'kategori.php',
+    'wisata-religi'     => 'kategori.php',
+    'wisata-rekreasi'   => 'kategori.php',
 ];
 
 // Daftar tabel dan primary key-nya
 $tables = [
+    # Khusus CRUD
     'jurusan' => 'id_jurusan',
 ];
 
 // Daftar aksi yang tersedia
 $actions = [
+    'recommendation',
+
+    # khusus CRUD
     'show',
     'insert',
     'update',
     'delete',
-
-    'recommendation',
-];
-
-$wisata = [
-    'Wisata A' => [.5, .6, .5, .5, .1, .1, .5, .1, .1],
-    'Wisata B' => [.5, .8, .5, .2, .5, .5, .5, .1, .1],
-    'Wisata C' => [.5, .7, .5, .5, .5, .1, .5, .1, .1],
-    'Wisata D' => [.5, .8, .0, .5, .1, .5, .5, .1, .1],
 ];
 
