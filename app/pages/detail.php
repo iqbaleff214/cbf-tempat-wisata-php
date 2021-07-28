@@ -23,6 +23,7 @@
                                 <img src="<?= $data['gambar'] ?: 'https://picsum.photos/1200/450' ?>" class="card-img" alt="<?= $data['nama_wisata'] ?>">
                             </div>
                             <p class="text-muted text-center"><?= $data['alamat'] ?></p>
+                            <?= $data['maps'] ?: '' ?>
                         </div>
                             
                     </div>

@@ -80,6 +80,7 @@ CREATE TABLE `pariwisata` (
   `alamat` text NOT NULL,
   `gambar` varchar(255) NOT NULL,
   `kategori` varchar(50) NULL,
+  `maps` text NULL,
   `prokes` float NOT NULL,
   `biaya` float NOT NULL,
   `rating` float NOT NULL,
