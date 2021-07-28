@@ -14,7 +14,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    
+                    <?php if($riwayat): ?>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -22,6 +22,7 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner">
+
                             <?php $counter = 0; ?>
                             <?php foreach($riwayat as $item): ?>
                             <?php $counter++; ?>
@@ -50,7 +51,11 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-
+                    <?php else: ?>
+                    <div class="text-center">
+                        <p class="">Tidak ada tempat wisata yang dapat direkomendasikan.</p>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
