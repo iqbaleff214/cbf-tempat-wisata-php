@@ -197,7 +197,7 @@ $opsiForm = [
                             <a href="<?= linkWithId('detail', $item['id_wisata']) ?>" style="text-decoration: none;">
                                 <h5 class="text-center font-weight-bold"><span class="badge badge-pill badge-primary"><?= $no++ ?></span> <?= $item['nama_wisata'] ?></h5>
                                 <div class="card bg-dark text-white my-4">
-                                    <img src="https://picsum.photos/1200/750" class="card-img" alt="<?= $item['nama_wisata'] ?>">
+                                    <img src="<?= $item['gambar'] ?: 'https://picsum.photos/1200/750' ?>" class="card-img" alt="<?= $item['nama_wisata'] ?>">
                                 </div>
                                 <p class="text-muted text-center"><?= $item['alamat'] ?></p>
                             </a>

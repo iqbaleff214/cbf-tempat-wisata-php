@@ -104,7 +104,7 @@
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="search" name="cari" class="form-control bg-light border-0 small" placeholder="Cari..."
-                                aria-label="Search" aria-describedby="basic-addon2" value="<?= isset($_POST['cari']) ? $_POST['cari'] : '' ?>">
+                                aria-label="Search" aria-describedby="basic-addon2" autocomplete="off" value="<?= isset($_POST['cari']) ? $_POST['cari'] : '' ?>">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fas fa-search fa-sm"></i>
