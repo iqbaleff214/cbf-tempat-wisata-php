@@ -203,6 +203,17 @@
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
 
+    <script>
+    
+        $(document).ready(function() {
+
+
+            $('iframe').attr('width', '100%').attr('height', 300);
+
+        });
+    
+    </script>
+
 </body>
 
 </html>
