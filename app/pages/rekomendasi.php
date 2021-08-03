@@ -196,6 +196,7 @@ $opsiForm = [
                         <div class="col-12 col-sm-6 col-lg-4 mb-5">
                             <a href="<?= linkWithId('detail', $item['id_wisata']) ?>" style="text-decoration: none;">
                                 <h5 class="text-center font-weight-bold"><span class="badge badge-pill badge-primary"><?= $no++ ?></span> <?= $item['nama_wisata'] ?></h5>
+                                <small class="text-muted text-center">Similiarity: <?= $val ?> (<?= round((float)$val * 100 ) . '%' ?>)</small>
                                 <div class="card bg-dark text-white my-4">
                                     <img src="<?= $item['gambar'] ?: 'https://picsum.photos/1200/750' ?>" class="card-img" alt="<?= $item['nama_wisata'] ?>">
                                 </div>
